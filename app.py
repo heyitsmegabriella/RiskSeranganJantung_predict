@@ -87,7 +87,7 @@ persen_tidak = round((tidak / total) * 100, 1) if total > 0 else 0
 # ===========================
 # Header
 # ===========================
-col1, col2, col3 = st.columns([4, 1, 1])
+col1, col2 = st.columns([4, 1])
 
 with col1:
     st.markdown("### 👋 Selamat Datang!")
@@ -98,10 +98,6 @@ with col2:
 📅 {datetime.now().strftime('%d-%m-%Y')}
 """)
 
-with col3: 
-    st.info(f"""
-🕒 {datetime.now().strftime('%H:%M:%S')}
-    """)
 
 # ===========================
 # Card Statistik
@@ -259,9 +255,9 @@ with right:
                 # Tampilan Hasil Prediksi
                 st.subheader("Hasil Prediksi")
                 if prediksi == "berisiko":
-                    st.error("❤️ Berisiko Penyakit Jantung")
+                    st.error("❤️ Berisiko Serangan Jantung")
                 else:
-                    st.success("💚 Tidak Berisiko Penyakit Jantung")
+                    st.success("💚 Tidak Berisiko Serangan Jantung")
 
                 st.write("### Probabilitas")
                 st.write(f"Berisiko : **{prob_berisiko * 100:.2f}%**")
